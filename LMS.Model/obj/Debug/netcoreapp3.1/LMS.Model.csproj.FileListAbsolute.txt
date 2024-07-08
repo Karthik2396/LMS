@@ -1,0 +1,13 @@
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\bin\Debug\netcoreapp3.1\LMS.Model.deps.json
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\bin\Debug\netcoreapp3.1\LMS.Model.runtimeconfig.json
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\bin\Debug\netcoreapp3.1\LMS.Model.runtimeconfig.dev.json
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\bin\Debug\netcoreapp3.1\LMS.Model.dll
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\bin\Debug\netcoreapp3.1\LMS.Model.pdb
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\obj\Debug\netcoreapp3.1\LMS.Model.csproj.AssemblyReference.cache
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\obj\Debug\netcoreapp3.1\LMS.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\obj\Debug\netcoreapp3.1\LMS.Model.AssemblyInfoInputs.cache
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\obj\Debug\netcoreapp3.1\LMS.Model.AssemblyInfo.cs
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\obj\Debug\netcoreapp3.1\LMS.Model.csproj.CoreCompileInputs.cache
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\obj\Debug\netcoreapp3.1\LMS.Model.dll
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\obj\Debug\netcoreapp3.1\LMS.Model.pdb
+C:\Users\KARTHIK\Desktop\LMS\LibraryManagementSystem\LMS.Model\obj\Debug\netcoreapp3.1\LMS.Model.genruntimeconfig.cache

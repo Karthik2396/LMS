@@ -1,0 +1,3 @@
+1. Install Microsoft SQL server 2019 and create new SQL server instance with name 'LOCALHOST'
+2. After creating the LOCALHOST instance, open and execute LMS.sql file in SSMS (v18)
+3. Open the LibraryManagementSystem solution in visual studio 2022 and run the application.
