@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Hello, @ViewBag.Member</h1>
+
+<div>
+    <a class="btn btn-primary text-light" asp-action="Borrow">Borrow</a>
+    <a class="btn btn-primary text-light" asp-action="ReturnRenew">Return/Renew</a>
+    @*<a asp-action="Renew">Renew</a>*@
+</div>
+

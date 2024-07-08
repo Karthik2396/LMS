@@ -1,0 +1,32 @@
+﻿@model LMS.Model.Models.Librarian;
+
+<section class="h-100 d-flex justify-content-center align-items-center">
+    <form class="login__section" id="Login_Form" method="post" asp-controller="Account" asp-action="LibrarianLogin">
+        <div class="login_box d-flex justify-content-around">
+           <h3>
+                Login
+            </h3>
+            @if (ViewBag.Error != null) {
+                <div class="row alert-danger">
+                    @ViewBag.Error
+                  </div>
+            }
+        <div class="row justify-content-between w-75">
+            <label class="login__label">
+                Username:
+            </label>
+            <input type="text" id="userid" asp-for="Username" />
+        </div>
+        <div class="row justify-content-between w-75">
+            <label class="login__label">
+                Password:
+            </label>
+            <input type="password" id="password" asp-for="Password"/>
+        </div>
+        <input type="submit" class="btn btn-primary text-light" />
+    </div>
+    </form>
+
+
+</section>
+

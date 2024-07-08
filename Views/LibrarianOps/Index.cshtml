@@ -1,0 +1,106 @@
+﻿@model IEnumerable<LMS.Model.Models.BookDetail>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h2>Books</h2>
+
+<p>
+    <a class="btn btn-primary text-light" asp-action="Create">Add New Book</a>
+    <a class="btn btn-primary text-light" asp-action="AddMember" class="float-right">Add New Member</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Book Id")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayName("Published Year")
+            </th>
+            <th>
+                @Html.DisplayName("Category")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @{
+                    var date = item.PubYear.ToString("MMM yyyy");
+                    @Html.DisplayFor(modelItem => date)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryNavigation.CatName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+<h2>Fine Collected</h2>
+@{
+    var fineCollected = (List<LMS.Model.Models.Fine>)ViewData["FineCollected"];
+}
+@if(fineCollected.Count() > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Member Id")
+                </th>
+                <th>
+                    @Html.DisplayName("Fine Collected Date")
+                </th>
+                <th>
+                    @Html.DisplayName("Fine Amount")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in fineCollected)
+            {
+                <tr>
+                    <td>
+                        @item.Member.MemberId
+                    </td>
+                    <td>
+                        @item.FineDate.Date.ToString("dd/MM/yyyy")
+                    </td>
+                    <td>
+                        <span>&pound</span> @item.FineAmount
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

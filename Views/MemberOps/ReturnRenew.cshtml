@@ -1,0 +1,83 @@
+﻿@model IEnumerable<LMS.Model.Models.Borrowed>
+
+@{
+    ViewData["Title"] = "Return/Renew";
+}
+
+<h1>Return/Renew</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Book)
+            </th>
+            <th>
+                @Html.DisplayName("Borrowed Date")
+            </th>
+            <th>
+                @Html.DisplayName("Return Date")
+            </th>
+            <th>
+                @Html.DisplayName("Fine Amount")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Title)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BorrowedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                    @if (item.FineAmount.HasValue)
+                    {
+                        <span>&pound</span> @Html.DisplayFor(modelItem => item.FineAmount);
+                        @if (ViewBag.FailedBorrowedBookId != null && ViewBag.FailedBorrowedBookId == item.Id) {
+                            if (ViewBag.IsRenewTried != null && Convert.ToBoolean(ViewBag.IsRenewTried))
+                            {
+                                <a class="btn btn-primary text-light"  asp-action="PayFine" asp-route-id="@item.Id" asp-route-renew="true">Pay Fine</a>
+                            } 
+                            else
+                            {
+                                <a class="btn btn-primary text-light" asp-action="PayFine" asp-route-id="@item.Id" asp-route-renew="false">Pay Fine</a>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        @Html.Raw("-")
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-primary text-light" asp-action="ReturnBorrowedBook" asp-route-id="@item.Id">Return</a> |
+                    <a class="btn btn-primary text-light" asp-action="RenewBorrowedBook" asp-route-id="@item.Id">Renew</a>
+                </td>
+                <td>
+                    @if (ViewBag.FailedBorrowedBookId != null && ViewBag.FailedBorrowedBookId == item.Id && ViewBag.Error != null)
+                    {
+                        <span class="text-danger">@ViewBag.Error</span>
+                    }
+                    @if (ViewBag.RenewedBorrowedBookId != null && item.Id == ViewBag.RenewedBorrowedBookId)
+                    {
+                            <span class="text-success">Renew Successfull</span>
+                    }
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to Home</a>
+</div>
